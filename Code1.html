@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sakshi Mangulkar — Portfolio</title>
+  <link rel="stylesheet" href="Code2.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">SM</div>
+        <div>
+          <div class="title">Sakshi Mangulkar</div>
+          <div class="subtitle">Software & Web Developer</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="buttons">
+        <button id="themeToggle" class="btn ghost">Light</button>
+        <button id="downloadBtn" class="btn">Download CV</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card hero-left">
+          <h1>Hello — I'm Sakshi.</h1>
+          <p>I build web & mobile experiences using Java, Android, and modern web technologies.</p>
+
+          <div class="cta">
+            <button class="btn" onclick="scrollToSection('projects')">View Projects</button>
+            <button class="btn ghost" onclick="scrollToSection('contact')">Contact Me</button>
+          </div>
+        </div>
+
+        <aside class="card profile">
+          <div class="avatar">SM</div>
+          <div class="meta">
+            <strong>Sakshi Mangulkar</strong><br>
+            MCA | Aspiring Software Engineer<br>
+            <small>Based in India • Open to internships & collaborations</small>
+          </div>
+        </aside>
+      </section>
+
+      <section id="skills" class="grid">
+        <div class="card skills">
+          <h2>Skills</h2>
+          <div class="skill"><span>HTML & CSS</span><div class="bar"><i style="width:95%"></i></div></div>
+          <div class="skill"><span>Java</span><div class="bar"><i style="width:88%"></i></div></div>
+          <div class="skill"><span>Android (Java)</span><div class="bar"><i style="width:85%"></i></div></div>
+          <div class="skill"><span>JavaScript</span><div class="bar"><i style="width:72%"></i></div></div>
+        </div>
+
+        <div class="card">
+          <h2 id="projects">Projects</h2>
+          <div class="filter-buttons">
+            <button class="btn ghost" onclick="filterProjects('all')">All</button>
+            <button class="btn ghost" onclick="filterProjects('android')">Android</button>
+            <button class="btn ghost" onclick="filterProjects('web')">Web</button>
+            <button class="btn ghost" onclick="filterProjects('no-code')">No-code</button>
+          </div>
+          <div class="projects" id="projectsList"></div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card timeline">
+          <h2>Experience & Education</h2>
+          <div class="item"><strong>MCA (In Progress)</strong><p>Learning Software Engineering, Mobile Dev & Data Structures</p></div>
+          <div class="item"><strong>Personal Projects</strong><p>Movie Streaming App, Smart Budgeting App, Profile Screen UI</p></div>
+        </div>
+
+        <div class="card" id="contact">
+          <h2>Contact</h2>
+          <p>Want to collaborate? Send a message below.</p>
+          <form onsubmit="handleContact(event)">
+            <input name="name" placeholder="Your name" required>
+            <input name="email" type="email" placeholder="you@example.com" required>
+            <textarea name="message" placeholder="Your message" required></textarea>
+            <div class="form-buttons">
+              <button class="btn" type="submit">Send</button>
+              <button type="button" class="btn ghost" onclick="copyEmail()">Copy Email</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <div class="modal" id="modal">
+        <div class="box card">
+          <button onclick="closeModal()" class="btn ghost close">Close</button>
+          <div id="modalContent"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Sakshi Mangulkar</div>
+      <div>Built with ❤️ HTML, CSS & JS</div>
+    </footer>
+  </div>
+
+  <script src="Code3.js"></script>
+</body>
+</html>
